@@ -6,6 +6,7 @@ ro.charger.enable_suspend=1
 
 # Display
 debug.sf.enable_hwc_vds=1
+debug.cpurend.vsync=false
 
 # Dirac
 ro.vendor.dirac.acs.controller=gef
