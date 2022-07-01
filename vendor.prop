@@ -174,7 +174,7 @@ persist.vendor.radio.rat_on=combine
 ro.telephony.default_network=33,33
 
 # set threshold to filter unused apps
-pm.dexopt.downgrade_after_inactive_days=10
+pm.dexopt.downgrade_after_inactive_days=5
 
 # Sensors
 persist.vendor.sensors.allow_non_default_discovery=true
