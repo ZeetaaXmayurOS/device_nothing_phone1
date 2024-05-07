@@ -145,6 +145,21 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
+# Dex-opt
+ART_BUILD_TARGET_NDEBUG := true
+ART_BUILD_TARGET_DEBUG := false
+ART_BUILD_HOST_NDEBUG := true
+ART_BUILD_HOST_DEBUG := false
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := everything
+PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
+ifeq ($(WITH_GMS),false)
+PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
+DONT_DEXPREOPT_PREBUILTS := false
+else
+PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything-profile
+DONT_DEXPREOPT_PREBUILTS := true
+endif
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
@@ -255,8 +270,6 @@ PRODUCT_PACKAGES += \
 # Inherit several Android Go Configurations(Beneficial for everyone, even on non-Go devices)
 PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
 PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
-# Speed profile services and wifi-service to reduce RAM and storage.
-PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 # Do not generate libartd.
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 # Strip the local variable table and the local variable type table to reduce

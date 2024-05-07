@@ -1,0 +1,9 @@
+# Dexopt
+pm.dexopt.first-boot=everything-profile
+pm.dexopt.first-use=everything-profile
+pm.dexopt.bg-dexopt=everything
+pm.dexopt.secondary=everything
+pm.dexopt.install=everything-profile
+pm.dexopt.install-bulk=everything-profile
+pm.dexopt.ab-ota=everything-profile
+pm.dexopt.shared=everything

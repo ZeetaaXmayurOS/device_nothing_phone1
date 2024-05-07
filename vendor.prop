@@ -90,6 +90,24 @@ ro.soc.manufacturer=Qualcomm
 ro.crypto.dm_default_key.options_format.version=2
 ro.crypto.volume.metadata.method=dm-default-key
 
+# Configure dex2oat
+dalvik.vm.dex2oat64.enabled=true
+dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5,6,7
+dalvik.vm.boot-dex2oat-threads=8
+dalvik.vm.boot-dex2oat-filter=everything
+dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7
+dalvik.vm.image-dex2oat-threads=8
+dalvik.vm.image-dex2oat-filter=everything
+dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7
+dalvik.vm.dex2oat-threads=8
+dalvik.vm.dex2oat-filter=everything
+dalvik.vm.restore-dex2oat-cpu-set=0,1,2,3,6,7
+dalvik.vm.restore-dex2oat-threads=6
+dalvik.vm.restore-filter=everything
+dalvik.vm.background-dex2oat-cpu-set=0,1,2,3,4,5,6,7
+dalvik.vm.background-dex2oat-threads=8
+dalvik.vm.background-filter=everything
+
 # DPM
 persist.vendor.dpm.idletimer.mode=default
 persist.vendor.dpmhalservice.enable=1
